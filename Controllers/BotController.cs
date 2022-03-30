@@ -27,7 +27,7 @@ namespace EchoBot.Controllers
         }
 
         [HttpPost]
-        [HttpGet]
+        // [HttpGet]
         public async Task PostAsync()
         {
             // Delegate the processing of the HTTP POST to the adapter.
