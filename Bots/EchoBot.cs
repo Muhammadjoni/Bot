@@ -41,38 +41,38 @@ namespace EchoBot.Bots
     //   }
     // }
     [Obsolete]
-    public async static Task Main(string[] args)
-    {
-      const string url = "https://mybotapp.azurewebsites.net/";
-      const string appId = "ab1404b9-d8c7-4aa4-8802-f6ae6e057cba";
-      const string appPassword = "0DI7Q~YJ5iRZF9KmjGgknLq7cy71qSGnHszbr";
+    // public async static Task Main(string[] args)
+    // {
+    //   const string url = "https://mybotapp.azurewebsites.net/";
+    //   const string appId = "ab1404b9-d8c7-4aa4-8802-f6ae6e057cba";
+    //   const string appPassword = "0DI7Q~YJ5iRZF9KmjGgknLq7cy71qSGnHszbr";
 
-      MicrosoftAppCredentials.TrustServiceUrl(url);
-      var client = new ConnectorClient(new Uri(url), appId, appPassword);
-      // Create or get existing chat conversation with user
-      var parameters = new ConversationParameters
-      {
-        Bot = new ChannelAccount("28:ab1404b9-d8c7-4aa4-8802-f6ae6e057cba"),
-        Members = new[] { new ChannelAccount("29:1jc1z3u42nZWnIgaPcKML432LtpgPqaEL-PtHvk0DT6NS5TiOx4HKH68CjRLKSNsv1vTDx3ghuzUqTP4XexQ00A") },
-        ChannelData = new TeamsChannelData
-        {
-          Tenant = new TenantInfo("603439c3-58ad-4a91-8ed3-b53e9a8677b3"),
-        },
-      };
-      var response = await client.Conversations.CreateConversationAsync(parameters);
-      // Construct the message to post to conversation
-      var newActivity = new Activity
-      {
-        Text = "Hello",
-        Type = ActivityTypes.Message,
-        Conversation = new ConversationAccount
-        {
-          Id = response.Id
-        },
-      };
-      // Post the message to chat conversation with user
-      await client.Conversations.SendToConversationAsync(response.Id, newActivity);
+    //   MicrosoftAppCredentials.TrustServiceUrl(url);
+    //   var client = new ConnectorClient(new Uri(url), appId, appPassword);
+    //   // Create or get existing chat conversation with user
+    //   var parameters = new ConversationParameters
+    //   {
+    //     Bot = new ChannelAccount("28:ab1404b9-d8c7-4aa4-8802-f6ae6e057cba"),
+    //     Members = new[] { new ChannelAccount("29:1jc1z3u42nZWnIgaPcKML432LtpgPqaEL-PtHvk0DT6NS5TiOx4HKH68CjRLKSNsv1vTDx3ghuzUqTP4XexQ00A") },
+    //     ChannelData = new TeamsChannelData
+    //     {
+    //       Tenant = new TenantInfo("603439c3-58ad-4a91-8ed3-b53e9a8677b3"),
+    //     },
+    //   };
+    //   var response = await client.Conversations.CreateConversationAsync(parameters);
+    //   // Construct the message to post to conversation
+    //   var newActivity = new Activity
+    //   {
+    //     Text = "Hello",
+    //     Type = ActivityTypes.Message,
+    //     Conversation = new ConversationAccount
+    //     {
+    //       Id = response.Id
+    //     },
+    //   };
+    //   // Post the message to chat conversation with user
+    //   await client.Conversations.SendToConversationAsync(response.Id, newActivity);
 
-    }
+    // }
   }
 }
