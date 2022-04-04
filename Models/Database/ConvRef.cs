@@ -10,7 +10,7 @@ namespace Bot.Models.Database
 {
   public class ConvRef
   {
-    public string Id { get; set; }
+    public int Id { get; set; }
     private string _upn;
     public string UPN
     {

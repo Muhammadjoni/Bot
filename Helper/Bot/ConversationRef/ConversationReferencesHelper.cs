@@ -57,16 +57,5 @@ namespace Bot.Helper.Bot.ConversationRef
 
       return conversationRef;
     }
-
-
-    public override bool Equals(object obj)
-    {
-      return base.Equals(obj);
-    }
-
-    public override int GetHashCode()
-    {
-      return HashCode.Combine(context);
-    }
   }
 }
